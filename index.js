@@ -18,11 +18,18 @@ app.use((err , req , res, next) => {
     console.error(err.stack)
     next();
 })
-app.use('/wiki' , tryer);
+
 app.use('/wiki' , wiki);
 
 app.get('/', (req , res) =>{
     res.send('Hello Worl')
+});
+
+app.get('/user/:userId/book/:bookId' , (req , res , next) => {
+    console.log('the response will be sent by the next function ...')
+    next()
+} , (req , res) => {
+    res.send("Hello Guys")
 });
 
 app.all('/secret' , (req , res) => {
