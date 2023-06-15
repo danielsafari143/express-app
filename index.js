@@ -10,13 +10,12 @@ const middleware = (req ,res , next) => {
 }
 
 const tryer = (req ,res , next) => {
-    console.log(req.pathname())
+    console.log(req.pathname)
     next()
 }
 
 app.use((err , req , res, next) => {
-    console.log("Hello just good")
-    console.error(err.stack);
+    console.error(err.stack)
     next();
 })
 app.use('/wiki' , tryer);
