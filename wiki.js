@@ -5,7 +5,7 @@ router.get('/' , (req , res) => {
     res.send("Hello Wiki")
 });
 
-router.get('/about' , (req , req ) => {
+router.get('/about' , (req , res ) => {
     res.send("Hello Daniel Safari")
 });
 
