@@ -1,7 +1,10 @@
 const express = require('express');
+const wiki = require('./wiki.js');
 const app = express();
 
 const port = 3000;
+
+app.use('/wiki' , wiki)
 
 app.get('/', (req , res) =>{
     res.send('Hello Worl')
